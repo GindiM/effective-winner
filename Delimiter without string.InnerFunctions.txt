@@ -1,0 +1,72 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp27
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            string str = "Hello World, I am Michael Cohen Gindi";
+            //Separator(str, ' ');
+            for (int i = 0; i < Separator(str, 'e').Length; i++)
+            {
+                Console.WriteLine(Separator(str, 'e')[i]);
+            }
+            
+
+            
+
+
+        }
+        static string[] Separator(string str, char c)
+        {
+            int count = 0;
+
+            for (int i = 0; i < str.Length; i++)
+            {
+                if (str[i] == c)
+                    count++;
+            }
+            string[] parts = new string[count+1]; //declares an array of strings sized as the number of sperated words
+            count = -1; //changes purpose
+            
+            
+
+            for (int i = 0; i <parts.Length; i++)
+            {
+                for (int j = count+1; j < str.Length; j++)
+                {
+                    if (str[j] == c)
+                    {
+                        count = j;
+                        break;
+                    }
+                    parts[i] = parts[i] + str[j]; //parts is an array of strings, str is an array of chars
+
+                }
+            }
+
+
+
+
+
+            
+            return parts;
+
+            
+        }
+
+
+
+
+    }
+
+
+
+
+}
