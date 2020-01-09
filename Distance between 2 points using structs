@@ -1,0 +1,33 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		Point point1; //Point type, point name;
+		Point point2;
+		
+		point1.x = 18;
+		point1.y = 13;
+		point2.x = -6;
+		point2.y = -15;
+		
+		Console.WriteLine(Distance(point2.x,point1.x,point2.y,point1.y));
+		
+	}
+	
+	
+	static Double Distance(int x1,int x2,int y1,int y2)
+	{	
+		Double a = Math.Sqrt((x1-x2)*(x1-x2)+(y1-y2)*(y1-y2));
+
+		return a;
+	}
+	
+	
+	struct Point
+	{
+		public int x;
+		public int y;
+	}
+}
