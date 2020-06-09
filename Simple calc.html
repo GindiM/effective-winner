@@ -1,0 +1,77 @@
+<!DOCTYPE html> 
+<html>
+<head>
+
+
+
+
+<script>
+
+let operator;
+
+function Calc()
+	{
+let n1 = parseFloat(document.getElementById('num1').value);
+let n2 = parseFloat(document.getElementById('num2').value);
+let oper = operator;
+
+if(oper === 'add')
+{
+document.getElementById('ResultText').value = (n1+n2);
+}
+else if(oper === 'sub')
+{
+document.getElementById('ResultText').value = (n1-n2);
+}
+else if(oper === 'multi')
+{
+document.getElementById('ResultText').value = (n1*n2);
+}
+else if(oper === 'divide')
+{
+	if(n1===0 || n2===0)
+	{
+	alert("Won't do that");
+	}
+	else
+	{
+	document.getElementById('ResultText').value = (n1/n2);
+	}
+}
+
+
+
+
+
+	}
+
+
+
+</script>
+
+</head>
+
+<body>
+
+
+
+
+
+<p>
+<input type="text" id="num1" name="num1" size="1">
+<input type="text" id="num2" name="num2" size="1">
+</p>
+
+<p>
+<input type="radio" name="action" id="add" onchange="operator='add'"/><label for="add">Add</label>
+<input type="radio" name="action" id="sub" onchange="operator='sub'"/><label for="sub">Sub</label>
+<input type="radio" name="action" id="multi" onchange="operator='multi'"/><label for="multi">Multi</label>
+<input type="radio" name="action" id="divide" onchange="operator='divide'"/><label for="divide">Divide</label>
+</p>
+
+<p><button type="button" onclick="Calc()">Execute</button></p>
+
+<p><input type="text" id="ResultText" name="ResultText" size="1"><p>
+
+</body>
+</html>
