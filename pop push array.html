@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<script>
+
+let arr=["car1","car2","car3","car4","car5"];
+
+function run(arrlist)
+{
+
+	let arr2=[];
+	let length = arrlist.length;
+	for(let i = 0; i<length; i++)
+	{
+	arr2.push(arrlist.pop());	
+	}
+
+document.getElementById("text1").innerHTML= (arr2);
+
+}
+
+</script>
+</head>
+
+
+
+
+<body onload="showarr()">
+
+<div id="text1" ></div>
+<div><input type="button" id="btn1" value="Run" onclick="run(arr)"/></div>
+
+</body>
+
+</html>
