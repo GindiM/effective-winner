@@ -1,0 +1,81 @@
+<!DOTYPE html>
+<html>
+
+<head>
+<script>
+let div1;
+let text1
+let arr=[];
+
+function initialize()
+{
+	text1 = document.getElementById("text1");
+	div1 = document.getElementById("div1");
+	renderDiv1();
+}
+
+function renderDiv1()
+{
+	//while(div1.firstChild)
+	//	div1.removeChild(div1.firstChild);
+	div1.innerHTML="";
+
+
+	let ulTags = document.createElement('ul');
+	for(let i =0;i<arr.length;i++)
+	{
+		let liTags = document.createElement('li');
+		liTags.innerHTML = arr[i];
+
+		liTags.i = i;
+		liTags.onclick = lineClicked;
+
+		ulTags.appendChild(liTags);
+	}
+	div1.appendChild(ulTags);
+	
+}
+
+function lineClicked(ev)
+{
+	let i = ev.target.i;
+	let newStr = arr[i];
+	arr[i] = newStr.slice(0,arr[i].length-1);
+	//arr[i]+="!";
+	renderDiv1();
+}
+
+
+
+function btn1Clicked()
+{
+let val= text1.value;
+arr.push(val);
+renderDiv1();
+text1.value="";
+text1.focus();
+}
+function text1KeyUp(event)
+{
+	if(event.keyCode == 13)
+		btn1Clicked();
+}
+
+
+
+</script>	
+</head>
+
+<body onload="initialize()">
+
+<input type = "textbox" id="text1" size="20" onkeyup="text1KeyUp(event)" autofocus/>
+<input type = "button"	id="btn1" value="Add" onclick="btn1Clicked()"/>
+
+<div id="div1">
+
+</div>
+
+</body>
+
+
+</html>
