@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<canvas id="myCanvas" width="200" height="200"
+style="border:1px solid #d3d3d3;">
+Your browser does not support the canvas element.
+</canvas>
+
+<script>
+
+var canvas = document.getElementById("myCanvas");
+var ctx = canvas.getContext("2d");
+drawDavid(100,95);
+
+//ctx.moveTo(50,70);
+//ctx.lineTo(150,70);//top line
+//
+//ctx.moveTo(50,120);//bottom line
+//ctx.lineTo(150,120);
+//
+//ctx.moveTo(50,70);//from left up to down center
+//ctx.lineTo(100,150);
+//
+//ctx.moveTo(150,70);//from right up to down center
+//ctx.lineTo(100,150);
+//
+//ctx.moveTo(100,40);
+//ctx.lineTo(50,120);
+//
+//ctx.moveTo(100,40);
+//ctx.lineTo(150,120);
+//ctx.stroke();
+
+
+function drawDavid(x,y)
+{
+ctx.moveTo(x-50,y-25);
+ctx.lineTo(x+50,y-25);//top line
+
+ctx.moveTo(x-50,y+25);//bottom line
+ctx.lineTo(x+50,y+25);
+
+ctx.moveTo(x-50,y-25);//from left up to down center
+ctx.lineTo(x,y+55);
+
+ctx.moveTo(x+50,y-25);//from right up to down center
+ctx.lineTo(x,y+55);
+
+ctx.moveTo(x,y-55);
+ctx.lineTo(x-50,y+25);
+
+ctx.moveTo(x,y-55);
+ctx.lineTo(x+50,y+25);
+
+//center 100,95
+
+
+ctx.stroke();
+}
+
+
+</script>
+
+</body>
+</html>
